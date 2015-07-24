@@ -13,16 +13,19 @@ public class HandlerOfException {
 		
 		
 		while(b >= 0) {
-			int c;
+			int c = -1;
 			try {
-				c = a / b;
+				c = divide(a, b);
 				File file = new File("src");
 				file.toURL();
 			}
-			catch(ArithmeticException | MalformedURLException  e){
-				e.printStackTrace();
-				c = 1;
+			catch(ArithmeticException e){
+				
 			}
+//			catch(ArithmeticException | MalformedURLException  e){
+//				e.printStackTrace();
+//				c = 1;
+//			}
 			catch(Throwable e){
 				e.printStackTrace();
 				c = 3;
@@ -30,11 +33,21 @@ public class HandlerOfException {
 //			finally {
 //				c = 4;
 //			}
+			
 			System.out.println(c);
 			b--;
 		}
 		
 		System.out.println("1");
 	}
+
+	private static int divide(int a, int b) throws Exception, ArithmeticException {
+		if (b == 0){
+			throw new Exception();
+		}
+		return a / b;
+	}
+	
+	
 
 }
