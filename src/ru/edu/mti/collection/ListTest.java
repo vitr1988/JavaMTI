@@ -57,6 +57,20 @@ public class ListTest {
 //		for (Integer elem : intList){
 //			System.out.println(elem);
 //		}
+		
+		List<Integer> l = new ArrayList<Integer>();
+		for (int i = 0; i < 3; i++){
+			l.add(i);
+		}
+		
+//		for (Integer in : l){
+//			l.remove(in);
+//		}
+		
+		for (Iterator<Integer> iter = l.iterator(); iter.hasNext();){
+			Integer currentElement = iter.next();
+			iter.remove();
+		}
 	}
 
 }
