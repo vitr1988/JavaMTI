@@ -8,6 +8,11 @@ public class CustomThread extends Thread {
 		this.ord = order;
 	}
 	
+	public CustomThread(ThreadGroup tgroup, Order order){
+		super(tgroup, "thread2");
+		this.ord = order;
+	}
+	
 	@Override
 	public void run() {
 		try {

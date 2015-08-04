@@ -1,10 +1,12 @@
 package ru.edu.mti.oop;
 
-public abstract class Automobile extends Object {
+import java.io.Serializable;
+
+public abstract class Automobile extends Object implements Serializable {
 
 	protected int speed;
-	String brand;
-	final double weight;
+	transient String brand;
+	transient final double weight;
 	String color;
 	
 	Automobile(){
@@ -39,6 +41,7 @@ public abstract class Automobile extends Object {
 	String getColor(){
 		return color;
 	}
+	
 	
 	abstract void recharge();
 	
